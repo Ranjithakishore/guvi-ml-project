@@ -8,7 +8,7 @@ from pyngrok import ngrok
 
 ngrok.set_auth_token("2x5wSYflpa9b37pfbw5gQRHxgYR_WAWzKdUuM6S8UCQ4vrKg")
 app = FastAPI()
-model_path = '/content/trained_model' 
+model_path = '/content/drive/MyDrive/trained_model' 
 model = DistilBertForSequenceClassification.from_pretrained(model_path)
 tokenizer = DistilBertTokenizer.from_pretrained(model_path)
 model.eval()
