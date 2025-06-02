@@ -2,8 +2,6 @@
 # !pip install fastapi uvicorn transformers torch nest-asyncio pyngrok
 # from google.colab import drive
 # drive.mount('/content/drive')
-# from google.colab import drive
-# drive.flush_and_unmount()
 
 import pandas as pd
 import numpy as np
