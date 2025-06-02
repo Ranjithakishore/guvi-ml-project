@@ -17,9 +17,9 @@ This project uses a DistilBERT model fine-tuned for **multi-label classification
 ## Requirements
 
 Install the necessary packages:
-
+```
 pip install transformers torch fastapi uvicorn nest-asyncio pyngrok pandas scikit-learn
-
+```
 ## How to Run
 
 ### 1. **Train the Model**
