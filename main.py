@@ -243,7 +243,6 @@ def evaluate_model(model, test_loader, device):
 def main():
     # Load and preprocess data
     print("Loading data")
-    # json_file_path = os.path.join('data', 'electronics_reviews.json')
     json_file_path = '/content/drive/MyDrive/electronics_reviews.json'
     df = pd.read_json(json_file_path, lines=True)
 
@@ -305,12 +304,6 @@ def main():
     for cat, score in zip(categories, metrics['auc_scores']):
         print(f"{cat}: {score:.4f}")
     print(f"\nInference Time: {metrics['inference_time']:.2f} seconds")
-
-    # Save the model
-    # print("Saving model")
-    # model.save_pretrained('trained_model')
-    # tokenizer.save_pretrained('trained_model')
-    # print("Model saved successfully!")
 
     # Save the model to Google Drive
     model_save_path = '/content/drive/MyDrive/trained_model'
