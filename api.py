@@ -8,7 +8,7 @@ from pyngrok import ngrok
 
 ngrok.set_auth_token("2x5wSYflpa9b37pfbw5gQRHxgYR_WAWzKdUuM6S8UCQ4vrKg")
 app = FastAPI()
-model_path = '/content/trained_model'  # Replace or mount from Drive if needed
+model_path = '/content/trained_model' 
 model = DistilBertForSequenceClassification.from_pretrained(model_path)
 tokenizer = DistilBertTokenizer.from_pretrained(model_path)
 model.eval()
@@ -23,7 +23,6 @@ categories = [
 # Request/Response schema
 class PredictionRequest(BaseModel):
     text: str
-
 class PredictionResponse(BaseModel):
     categories: dict
 
@@ -59,7 +58,7 @@ nest_asyncio.apply()
 
 # Expose the app
 public_url = ngrok.connect(8000)
-print(f"🚀 Your FastAPI app is available at: {public_url}/docs")
+print(f"FastAPI app is available at: {public_url}/docs")
 
 # Start the app
 uvicorn.run(app, host="0.0.0.0", port=8000)
